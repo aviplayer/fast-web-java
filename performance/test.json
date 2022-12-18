@@ -1,4 +1,5 @@
 {
-  "username": "andrew",
-  "id": 234
+  "name": "andrew",
+  "email": "test@test.com",
+  "age":25
 }

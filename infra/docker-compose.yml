@@ -1,4 +1,10 @@
-version: "3"
+networks:
+  main:
+    name: fast-http
+    driver: bridge
+    ipam:
+      config:
+          - subnet: 179.25.0.0/24
 services:
   db:
     image: postgres:15.0-alpine
@@ -11,3 +17,5 @@ services:
       - ./postgres/init-es.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - "5432:5432"
+    networks:
+      - main

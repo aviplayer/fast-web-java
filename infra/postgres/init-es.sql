@@ -1,7 +1,6 @@
-/* Event table */
-CREATE TABLE IF NOT EXISTS "event"
+CREATE TABLE IF NOT EXISTS "users"
 (
-    "id"             BIGSERIAL PRIMARY KEY,
+    "id"             SERIAL PRIMARY KEY,
     "name"           VARCHAR  NOT NULL,
     "email"          VARCHAR  NOT NULL,
     "age"            INT NOT NULL

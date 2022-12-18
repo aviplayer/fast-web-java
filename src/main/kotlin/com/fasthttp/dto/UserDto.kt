@@ -5,5 +5,7 @@ import com.dslplatform.json.CompiledJson
 @CompiledJson
 data class UserDto(
     val id: Int,
-    val username: String
+    val name: String,
+    val email: String,
+    val age: Int,
 )

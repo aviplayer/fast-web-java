@@ -22,8 +22,13 @@ dependencies {
     implementation("io.projectreactor.netty:reactor-netty-core")
     implementation("io.projectreactor.netty:reactor-netty-http")
 
+    implementation("com.ongres.scram:common:2.1")
+    implementation("com.ongres.scram:client:2.1")
+    implementation("io.vertx:vertx-pg-client:4.3.5")
+
     // native image fixes
     compileOnly("io.netty:netty-transport-native-epoll:4.1.84.Final")
+    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.1")
 
     // Serialization
     implementation("com.dslplatform:dsl-json-java8:1.9.9")
