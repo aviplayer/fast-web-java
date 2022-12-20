@@ -22,7 +22,6 @@ class DataBase {
     }
 
     fun createUser(usr: UserDto): Mono<Int>{
-        println(String.format(INSERT_USER, usr.name, usr.email  , usr.age))
         val  f = client
                 .query(String.format(INSERT_USER, usr.name, usr.email  , usr.age))
             .execute()
@@ -36,7 +35,6 @@ class DataBase {
     }
 
     fun getUsert(id: Int): Mono<UserDto> {
-        println(String.format(GET_USER, id))
         val  f = client
             .query(String.format(GET_USER, id))
             .execute()
@@ -55,7 +53,6 @@ class DataBase {
     }
 
     fun deleteUser(usr: UserDto): Mono<UserDto> {
-        println(String.format(DELETE_USER, usr.id))
         val  f = client
             .query(String.format(DELETE_USER, usr.id))
             .execute()

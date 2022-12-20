@@ -1,11 +1,7 @@
 package com.fasthttp
 import com.fasthttp.handler.Handler
-import io.vertx.pgclient.impl.codec.DataTypeCodec
 import reactor.netty.http.server.HttpServer
 import reactor.netty.http.server.HttpServerRoutes
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-import java.util.*
 
 fun main() {
     val port = 8089

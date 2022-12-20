@@ -28,7 +28,7 @@ dependencies {
 
     // native image fixes
     compileOnly("io.netty:netty-transport-native-epoll:4.1.84.Final")
-    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.1")
+    //implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.1")
 
     // Serialization
     implementation("com.dslplatform:dsl-json-java8:1.9.9")

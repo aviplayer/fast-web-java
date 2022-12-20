@@ -1,8 +1,8 @@
 #!/usr/bin/env just --justfile
-JAVA_HOME := '/home/andrew/.jdks/graalvm-ce-java17-22.3.0'
-GRADLE_HOME_BIN := '/home/andrew/.gradle/wrapper/dists/gradle-7.4.2-bin/48ivgl02cpt2ed3fh9dbalvx8/gradle-7.4.2/bin'
-UPX_HOME := '/home/andrew/Applications/upx/'
-TOOLCHAIN_DIR := '/home/andrew/Applications/x86_64-linux-musl-native'
+JAVA_HOME := '/home/user/.jdks/graalvm-ce-java17-22.3.0'
+GRADLE_HOME_BIN := '/home/user/.gradle/wrapper/dists/gradle-7.4.2-bin/48ivgl02cpt2ed3fh9dbalvx8/gradle-7.4.2/bin'
+UPX_HOME := '/home/user/Applications/upx/'
+TOOLCHAIN_DIR := '/home/user/Applications/x86_64-linux-musl-native'
 
 measure:
     python3 performance/measure.py
@@ -21,7 +21,7 @@ docker-java:
   cp ./build/libs/fast-http-1.0-SNAPSHOT.jar ./performance/infra/java/app.jar
   docker build -t fasthttp-java:1 performance/infra/java
   docker run -it -d --memory=100m --cpus=4 -p 8089:8089 --network fast-http fasthttp-java:1
-docker-native:
+docker-native: native
   cp ./app.upx ./performance/infra/native/app
   docker build -t fasthttp-native:1 performance/infra/native
   docker run -it -d --memory=100m --cpus=4 -p 8089:8089 --network fast-http fasthttp-native:1
